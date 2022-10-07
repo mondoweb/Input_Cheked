@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Input Checked   </title>
+
+    <style>
+    body{
+        background-color: rgba(239, 234, 234, 0.7);
+    }
+    </style>
+</head>
+
+<body>
+    <p> Seleziona il tuo browser preferito :</p>
+    <form >
+      <input type="radio" name="browser" onclick="myFunction(this.value)" value="Internet Explorer" checked class="checked" >Internet Explorer   <br>
+      <input type="radio" name="browser" onclick="myFunction(this.value)" value="Firefox"  class="checked"  >Firefox   <br>
+      <input type="radio" name="browser" onclick="myFunction(this.value)" value="Opera" class="checked"  >Opera   <br>
+      <input type="radio" name="browser" onclick="myFunction(this.value)" value="Google Chrome" class="checked"  >Google Chrome<br>
+      <input type="radio" name="browser" onclick="myFunction(this.value)" value="Safari"  class="checked"  >Safari<br><br>
+    
+    
+
+      Il tuo browser preferito è:
+       <input type="text" id="result">
+      <!-- <input type="submit" value="Invio form"> -->
+    </form>
+
+
+ <br> 
+ <hr>
+    <span  >  
+        <!-- <em> Dario </em> <input type="checkbox" name="sesso1"  id="dario" value="dario" checked> 
+        <em> Simona </em> <input type="checkbox" name="sesso1" id="simona" value="simona" >  -->
+
+        <label for="nome"> Nome</label>
+        <input type="text"  id="nome" autofocus  placeholder="nome...." >
+
+        <br>
+
+       
+           <!-- <input type="radio"  id="uomo"   value="uomo"   name="sesso"   onclick="nome(this.value)" >  <label for="uomo" > Uomo  </label> 
+           <input type="radio"  id="donna"  value="donna"  name="sesso"  onclick="nome(this.value)">   <label for="donna"> Donna  </label>  -->
+           <input type="radio"  id="uomo"   value="Uomo"   name="sesso"  >  <label for="uomo" > Uomo  </label> 
+           <input type="radio"  id="donna"  value="Donna"  name="sesso"  >   <label for="donna"> Donna  </label> 
+          
+           <br>
+            <button  onclick="selezionato()" > selezionato ? </button>
+            <br>
+            <p id="p"> </p>
+            <br>
+        </form>
+       </span>
+    
+    <script>
+       
+        const myFunction = (browser)  => {  
+            document.getElementById("result").value = browser ;
+        }
+
+
+        const  selezionato = () =>{
+            _nome();       
+        }
+
+       
+    // function  nome( sesso){
+        const  _nome = ( )=> {
+        //   x1= document.getElementById("dario").defaultChecked;
+        // let x1= document.getElementById("dario");
+        let x1= document.getElementById("nome");
+            // 
+      
+
+     let uomo = document.getElementById("uomo");
+     let donna = document.getElementById("donna");
+    //    console.log(uomo.checked == false)    
+
+
+   
+      if( x1.value !== '' &&  uomo.checked ){
+        _ses(  x1.value, uomo.value , "rgb(44, 44, 242)")
+        /*
+              p.innerHTML= ' Salve mi chiamo '+  x1.value + ' e sono  ' + uomo.value ;
+              p.style.color = "rgb(44, 44, 242)" ;
+              p.style.textTransform = ' capitalize';
+              p.style.fontWeight = "bold";
+              x1.value= '';
+                return; 
+                */
+        }  else if(x1.value !== '' &&   donna.checked){
+
+            _ses(  x1.value, donna.value , "palevioletred")
+            /*
+               p.innerHTML= ' Salve mi chiamo '+  x1.value + ' e sono  ' +  donna.value ;
+               p.style.color = "palevioletred" ;
+               p.style.textTransform = ' capitalize';
+               p.style.fontWeight = "bold";
+               x1.value= '';
+            return;
+            */
+        } else{  alert(' immetti NOME o seleziona  UOMO/DONNA ')  }
+       
+        // simulazione con opreratore Ternario
+     /*
+      x1.checked ;
+         x1 === false ?  alert(' utente NON selezionato ') : alert(' utente è gia selezionato ')
+         x1  ?  alert(' utente è gia selezionato ') : alert(' utente NON selezionato ')
+     */
+       }
+
+      
+       const _ses = ( xvalue , sVal , col ) => {
+          let p =  document.getElementById('p');
+             p.innerHTML= ' Salve mi chiamo '+  xvalue + ' e sono  ' + /*sesso*/ sVal ;
+              p.style.color = col ;
+              p.style.textTransform = ' capitalize';
+              p.style.fontWeight = "bold";
+              x1.value= '';
+              return;
+       }
+
+
+    
+    </script>
+
+</body>
+
+</html>
