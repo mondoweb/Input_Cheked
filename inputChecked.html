@@ -63,60 +63,33 @@
         }
 
 
-        const  selezionato = () =>{
+    const  selezionato = () =>{
             _nome();       
         }
 
        
-    // function  nome( sesso){
-        const  _nome = ( )=> {
-        //   x1= document.getElementById("dario").defaultChecked;
-        // let x1= document.getElementById("dario");
+    const  _nome = ( )=> {
         let x1= document.getElementById("nome");
-            // 
-      
-
+            
      let uomo = document.getElementById("uomo");
      let donna = document.getElementById("donna");
-    //    console.log(uomo.checked == false)    
+    //    console.log(uomo.checked == true)    
 
-
-   
       if( x1.value !== '' &&  uomo.checked ){
         _ses(  x1.value, uomo.value , "rgb(44, 44, 242)")
-        /*
-              p.innerHTML= ' Salve mi chiamo '+  x1.value + ' e sono  ' + uomo.value ;
-              p.style.color = "rgb(44, 44, 242)" ;
-              p.style.textTransform = ' capitalize';
-              p.style.fontWeight = "bold";
-              x1.value= '';
-                return; 
-                */
+       
         }  else if(x1.value !== '' &&   donna.checked){
 
             _ses(  x1.value, donna.value , "palevioletred")
-            /*
-               p.innerHTML= ' Salve mi chiamo '+  x1.value + ' e sono  ' +  donna.value ;
-               p.style.color = "palevioletred" ;
-               p.style.textTransform = ' capitalize';
-               p.style.fontWeight = "bold";
-               x1.value= '';
-            return;
-            */
+          
         } else{  alert(' immetti NOME o seleziona  UOMO/DONNA ')  }
        
-        // simulazione con opreratore Ternario
-     /*
-      x1.checked ;
-         x1 === false ?  alert(' utente NON selezionato ') : alert(' utente è gia selezionato ')
-         x1  ?  alert(' utente è gia selezionato ') : alert(' utente NON selezionato ')
-     */
        }
 
       
        const _ses = ( xvalue , sVal , col ) => {
           let p =  document.getElementById('p');
-             p.innerHTML= ' Salve mi chiamo '+  xvalue + ' e sono  ' + /*sesso*/ sVal ;
+              p.innerHTML= ' Salve mi chiamo '+  xvalue + ' e sono  ' + /*sesso*/ sVal ;
               p.style.color = col ;
               p.style.textTransform = ' capitalize';
               p.style.fontWeight = "bold";
