@@ -48,4 +48,4 @@ const a = document.getElementById("background" );
 //    a.style.backgroundColor = 'red';
    })(); 
 
-a.addEventListener("onlad", backgroundColor );
+a.addEventListener("onload", backgroundColor );   
